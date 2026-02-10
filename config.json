@@ -1,0 +1,24 @@
+{
+  "project": "ud100-form",
+  "source_type": "form",
+  "form_url": "https://courts.ca.gov/sites/default/files/courts/default/2024-11/ud100.pdf",
+  "classes": [
+    "text_field",
+    "checkbox",
+    "date_field",
+    "dollar_amount",
+    "signature",
+    "case_number"
+  ],
+  "num_variations": 100,
+  "target_accuracy": 0.75,
+  "max_iterations": 10,
+  "num_agents": 4,
+  "fps": 1,
+  "output_dir": "output",
+  "label_mode": "codex",
+  "model": "gpt-5-nano",
+  "yolo_model": "yolov8n.pt",
+  "epochs": 50,
+  "train_split": 0.8
+}

@@ -1,0 +1,648 @@
+[
+  {
+    "field_type": "checkbox",
+    "confidence": 0.956,
+    "bbox": [
+      386,
+      1287,
+      412,
+      1313
+    ],
+    "crop_file": "checkbox_001.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.955,
+    "bbox": [
+      190,
+      1400,
+      215,
+      1425
+    ],
+    "crop_file": "checkbox_002.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.954,
+    "bbox": [
+      251,
+      1653,
+      276,
+      1679
+    ],
+    "crop_file": "checkbox_003.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "case_number",
+    "confidence": 0.951,
+    "bbox": [
+      1108,
+      706,
+      1592,
+      745
+    ],
+    "crop_file": "case_number_001.jpg",
+    "value": "BC-78029"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.945,
+    "bbox": [
+      386,
+      1323,
+      412,
+      1349
+    ],
+    "crop_file": "checkbox_004.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.941,
+    "bbox": [
+      844,
+      1730,
+      1074,
+      1755
+    ],
+    "crop_file": "text_field_001.jpg",
+    "value": "+1-878-999-2168x9"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.94,
+    "bbox": [
+      345,
+      897,
+      370,
+      921
+    ],
+    "crop_file": "checkbox_005.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.939,
+    "bbox": [
+      984,
+      1783,
+      1586,
+      1814
+    ],
+    "crop_file": "text_field_002.jpg",
+    "value": "Nicole Davis"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.939,
+    "bbox": [
+      142,
+      1108,
+      1593,
+      1172
+    ],
+    "crop_file": "text_field_003.jpg",
+    "value": "49030 Lisa Land, North Melanie, CO 95163"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.939,
+    "bbox": [
+      372,
+      732,
+      398,
+      757
+    ],
+    "crop_file": "checkbox_006.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.939,
+    "bbox": [
+      132,
+      1209,
+      1589,
+      1273
+    ],
+    "crop_file": "text_field_004.jpg",
+    "value": "PSC 9548, Box 9689, chad = aia"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.936,
+    "bbox": [
+      117,
+      642,
+      142,
+      667
+    ],
+    "crop_file": "checkbox_007.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.933,
+    "bbox": [
+      386,
+      1360,
+      412,
+      1386
+    ],
+    "crop_file": "checkbox_008.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.932,
+    "bbox": [
+      346,
+      864,
+      371,
+      889
+    ],
+    "crop_file": "checkbox_009.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.931,
+    "bbox": [
+      1059,
+      997,
+      1084,
+      1023
+    ],
+    "crop_file": "checkbox_010.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.931,
+    "bbox": [
+      251,
+      1687,
+      276,
+      1711
+    ],
+    "crop_file": "checkbox_011.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.931,
+    "bbox": [
+      995,
+      732,
+      1093,
+      762
+    ],
+    "crop_file": "text_field_005.jpg",
+    "value": "Sanchez"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.931,
+    "bbox": [
+      118,
+      928,
+      143,
+      954
+    ],
+    "crop_file": "checkbox_012.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.929,
+    "bbox": [
+      270,
+      502,
+      1102,
+      528
+    ],
+    "crop_file": "text_field_006.jpg",
+    "value": "274 Matthew Parkway Suite 982, Goodmanchester, OH 28273"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.928,
+    "bbox": [
+      181,
+      996,
+      206,
+      1020
+    ],
+    "crop_file": "checkbox_013.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.927,
+    "bbox": [
+      186,
+      1432,
+      1592,
+      1486
+    ],
+    "crop_file": "text_field_007.jpg",
+    "value": "304.505.2824x2730"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.924,
+    "bbox": [
+      181,
+      1554,
+      1596,
+      1598
+    ],
+    "crop_file": "text_field_008.jpg",
+    "value": "+1-278-637-9659x940"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.922,
+    "bbox": [
+      117,
+      960,
+      143,
+      986
+    ],
+    "crop_file": "checkbox_014.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.92,
+    "bbox": [
+      138,
+      732,
+      162,
+      756
+    ],
+    "crop_file": "checkbox_015.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.919,
+    "bbox": [
+      116,
+      833,
+      142,
+      858
+    ],
+    "crop_file": "checkbox_016.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.918,
+    "bbox": [
+      728,
+      1654,
+      1592,
+      1679
+    ],
+    "crop_file": "text_field_009.jpg",
+    "value": "Human father accept."
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.916,
+    "bbox": [
+      271,
+      442,
+      1100,
+      467
+    ],
+    "crop_file": "text_field_010.jpg",
+    "value": "Lake Brianville"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.912,
+    "bbox": [
+      728,
+      306,
+      1086,
+      331
+    ],
+    "crop_file": "text_field_011.jpg",
+    "value": ": 97245 Harris Green, Adamston"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.912,
+    "bbox": [
+      1059,
+      1030,
+      1084,
+      1055
+    ],
+    "crop_file": "checkbox_017.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.912,
+    "bbox": [
+      622,
+      1358,
+      1582,
+      1387
+    ],
+    "crop_file": "text_field_012.jpg",
+    "value": "681 Mary Park, Lake Frank, KS 20017"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.912,
+    "bbox": [
+      252,
+      338,
+      1093,
+      363
+    ],
+    "crop_file": "text_field_013.jpg",
+    "value": "Desian emplovee better. ~-Vl erty TIiGAilio VACSCI, MUGAIOW I!"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.91,
+    "bbox": [
+      145,
+      273,
+      672,
+      299
+    ],
+    "crop_file": "text_field_014.jpg",
+    "value": "-USNV Roberson, FPO AP 85481"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.907,
+    "bbox": [
+      264,
+      241,
+      1093,
+      266
+    ],
+    "crop_file": "text_field_015.jpg",
+    "value": "(892)829-2368x3 766"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.907,
+    "bbox": [
+      286,
+      533,
+      1087,
+      557
+    ],
+    "crop_file": "text_field_016.jpg",
+    "value": "Den individual Candidate."
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.904,
+    "bbox": [
+      245,
+      609,
+      1090,
+      634
+    ],
+    "crop_file": "text_field_017.jpg",
+    "value": ": (336)567-9292x20934"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.904,
+    "bbox": [
+      752,
+      1785,
+      778,
+      1810
+    ],
+    "crop_file": "checkbox_018.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.903,
+    "bbox": [
+      161,
+      179,
+      1099,
+      203
+    ],
+    "crop_file": "text_field_018.jpg",
+    "value": "(518)781-2693"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.903,
+    "bbox": [
+      911,
+      274,
+      1094,
+      299
+    ],
+    "crop_file": "text_field_019.jpg",
+    "value": "Sierraville"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.902,
+    "bbox": [
+      325,
+      644,
+      467,
+      669
+    ],
+    "crop_file": "text_field_020.jpg",
+    "value": "~Second war"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.895,
+    "bbox": [
+      247,
+      571,
+      1101,
+      597
+    ],
+    "crop_file": "text_field_021.jpg",
+    "value": "‘Natural conference."
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.889,
+    "bbox": [
+      272,
+      474,
+      1090,
+      497
+    ],
+    "crop_file": "text_field_022.jpg",
+    "value": "North Denise"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.889,
+    "bbox": [
+      856,
+      145,
+      1089,
+      170
+    ],
+    "crop_file": "text_field_023.jpg",
+    "value": "Port Cynthia"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.888,
+    "bbox": [
+      246,
+      306,
+      601,
+      330
+    ],
+    "crop_file": "text_field_024.jpg",
+    "value": "O01 -894-773-5812x6646"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.886,
+    "bbox": [
+      289,
+      370,
+      1091,
+      395
+    ],
+    "crop_file": "text_field_025.jpg",
+    "value": ": Rather road but political."
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.884,
+    "bbox": [
+      727,
+      274,
+      809,
+      299
+    ],
+    "crop_file": "text_field_026.jpg",
+    "value": ""
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.883,
+    "bbox": [
+      181,
+      1028,
+      207,
+      1053
+    ],
+    "crop_file": "checkbox_019.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.881,
+    "bbox": [
+      886,
+      1688,
+      1593,
+      1712
+    ],
+    "crop_file": "text_field_027.jpg",
+    "value": "Sandy Becker"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.858,
+    "bbox": [
+      560,
+      1786,
+      586,
+      1811
+    ],
+    "crop_file": "checkbox_020.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.858,
+    "bbox": [
+      944,
+      1324,
+      969,
+      1349
+    ],
+    "crop_file": "checkbox_021.jpg",
+    "checked": false,
+    "value": "☐ UNCHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.84,
+    "bbox": [
+      629,
+      412,
+      1089,
+      437
+    ],
+    "crop_file": "text_field_028.jpg",
+    "value": "Port Sylvia"
+  },
+  {
+    "field_type": "checkbox",
+    "confidence": 0.68,
+    "bbox": [
+      945,
+      1287,
+      971,
+      1312
+    ],
+    "crop_file": "checkbox_022.jpg",
+    "checked": true,
+    "value": "✓ CHECKED"
+  },
+  {
+    "field_type": "text_field",
+    "confidence": 0.543,
+    "bbox": [
+      228,
+      209,
+      1000,
+      233
+    ],
+    "crop_file": "text_field_029.jpg",
+    "value": "Anquaae oneration head."
+  }
+]

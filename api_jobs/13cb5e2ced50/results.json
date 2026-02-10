@@ -1,0 +1,2585 @@
+{
+  "job_id": "13cb5e2ced50",
+  "num_pages": 4,
+  "total_fields": 187,
+  "total_checkboxes": 105,
+  "total_checked": 70,
+  "total_unchecked": 35,
+  "processing_time_sec": 6.68,
+  "pages": [
+    {
+      "page": 0,
+      "total_fields": 52,
+      "checkboxes": 22,
+      "checked": 16,
+      "unchecked": 6,
+      "text_fields": 30,
+      "annotated_image": "/files/13cb5e2ced50/page_0.jpg"
+    },
+    {
+      "page": 1,
+      "total_fields": 56,
+      "checkboxes": 37,
+      "checked": 22,
+      "unchecked": 15,
+      "text_fields": 19,
+      "annotated_image": "/files/13cb5e2ced50/page_1.jpg"
+    },
+    {
+      "page": 2,
+      "total_fields": 44,
+      "checkboxes": 30,
+      "checked": 21,
+      "unchecked": 9,
+      "text_fields": 14,
+      "annotated_image": "/files/13cb5e2ced50/page_2.jpg"
+    },
+    {
+      "page": 3,
+      "total_fields": 35,
+      "checkboxes": 16,
+      "checked": 11,
+      "unchecked": 5,
+      "text_fields": 19,
+      "annotated_image": "/files/13cb5e2ced50/page_3.jpg"
+    }
+  ],
+  "fields": [
+    {
+      "page": 0,
+      "field_type": "case_number",
+      "confidence": 0.961,
+      "bbox": [
+        1109,
+        706,
+        1595,
+        745
+      ],
+      "crop_file": "p0_case_number_001.jpg",
+      "value": "UD-225885"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.956,
+      "bbox": [
+        190,
+        1399,
+        215,
+        1425
+      ],
+      "crop_file": "p0_checkbox_001.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.954,
+      "bbox": [
+        386,
+        1287,
+        412,
+        1313
+      ],
+      "crop_file": "p0_checkbox_002.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.954,
+      "bbox": [
+        252,
+        1653,
+        276,
+        1679
+      ],
+      "crop_file": "p0_checkbox_003.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.95,
+      "bbox": [
+        843,
+        1730,
+        1072,
+        1756
+      ],
+      "crop_file": "p0_text_field_001.jpg",
+      "value": "Artist ten have."
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.946,
+      "bbox": [
+        386,
+        1323,
+        412,
+        1348
+      ],
+      "crop_file": "p0_checkbox_004.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.943,
+      "bbox": [
+        992,
+        732,
+        1092,
+        762
+      ],
+      "crop_file": "p0_text_field_002.jpg",
+      "value": "Mind tes"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.94,
+      "bbox": [
+        345,
+        897,
+        370,
+        921
+      ],
+      "crop_file": "p0_checkbox_005.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.938,
+      "bbox": [
+        135,
+        1108,
+        1592,
+        1172
+      ],
+      "crop_file": "p0_text_field_003.jpg",
+      "value": "Instead start forget."
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.936,
+      "bbox": [
+        135,
+        1209,
+        1587,
+        1273
+      ],
+      "crop_file": "p0_text_field_004.jpg",
+      "value": "History huge.  _"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.935,
+      "bbox": [
+        117,
+        960,
+        143,
+        986
+      ],
+      "crop_file": "p0_checkbox_006.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.935,
+      "bbox": [
+        252,
+        1687,
+        277,
+        1712
+      ],
+      "crop_file": "p0_checkbox_007.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.934,
+      "bbox": [
+        386,
+        1360,
+        412,
+        1386
+      ],
+      "crop_file": "p0_checkbox_008.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.934,
+      "bbox": [
+        373,
+        733,
+        398,
+        757
+      ],
+      "crop_file": "p0_checkbox_009.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.933,
+      "bbox": [
+        732,
+        306,
+        1090,
+        332
+      ],
+      "crop_file": "p0_text_field_005.jpg",
+      "value": ": strategy discuss."
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.933,
+      "bbox": [
+        346,
+        864,
+        371,
+        889
+      ],
+      "crop_file": "p0_checkbox_010.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.932,
+      "bbox": [
+        118,
+        927,
+        143,
+        953
+      ],
+      "crop_file": "p0_checkbox_011.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.931,
+      "bbox": [
+        177,
+        1432,
+        1590,
+        1486
+      ],
+      "crop_file": "p0_text_field_006.jpg",
+      "value": "Phone stuff military."
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.927,
+      "bbox": [
+        913,
+        274,
+        1089,
+        299
+      ],
+      "crop_file": "p0_text_field_007.jpg",
+      "value": "71065"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.927,
+      "bbox": [
+        139,
+        273,
+        664,
+        299
+      ],
+      "crop_file": "p0_text_field_008.jpg",
+      "value": "‘1451 Donald Branch, Brownfurt, CT 17413"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.926,
+      "bbox": [
+        983,
+        1783,
+        1589,
+        1815
+      ],
+      "crop_file": "p0_text_field_009.jpg",
+      "value": "Sister water."
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.924,
+      "bbox": [
+        117,
+        642,
+        142,
+        667
+      ],
+      "crop_file": "p0_checkbox_012.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.922,
+      "bbox": [
+        181,
+        996,
+        206,
+        1020
+      ],
+      "crop_file": "p0_checkbox_013.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.921,
+      "bbox": [
+        179,
+        1555,
+        1592,
+        1599
+      ],
+      "crop_file": "p0_text_field_010.jpg",
+      "value": "Source other note something."
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.921,
+      "bbox": [
+        727,
+        1654,
+        1592,
+        1679
+      ],
+      "crop_file": "p0_text_field_011.jpg",
+      "value": "Customer."
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.918,
+      "bbox": [
+        139,
+        733,
+        163,
+        757
+      ],
+      "crop_file": "p0_checkbox_014.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.918,
+      "bbox": [
+        269,
+        442,
+        1093,
+        467
+      ],
+      "crop_file": "p0_text_field_012.jpg",
+      "value": "3343 Cox Prairie Apt. 173, Port Amyshire, UT 2/7377"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.917,
+      "bbox": [
+        1059,
+        998,
+        1084,
+        1022
+      ],
+      "crop_file": "p0_checkbox_015.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.915,
+      "bbox": [
+        855,
+        145,
+        1088,
+        170
+      ],
+      "crop_file": "p0_text_field_013.jpg",
+      "value": "White personal."
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.914,
+      "bbox": [
+        245,
+        609,
+        1086,
+        634
+      ],
+      "crop_file": "p0_text_field_014.jpg",
+      "value": "‘Natalie Lyons"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.914,
+      "bbox": [
+        257,
+        241,
+        1091,
+        266
+      ],
+      "crop_file": "p0_text_field_015.jpg",
+      "value": "- 25887 Smith Motorway, Danielshaven, OK 96822 eraser epee"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.913,
+      "bbox": [
+        116,
+        833,
+        142,
+        858
+      ],
+      "crop_file": "p0_checkbox_016.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.913,
+      "bbox": [
+        619,
+        1358,
+        1583,
+        1387
+      ],
+      "crop_file": "p0_text_field_016.jpg",
+      "value": "Company."
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.904,
+      "bbox": [
+        244,
+        306,
+        612,
+        330
+      ],
+      "crop_file": "p0_text_field_017.jpg",
+      "value": "°33/2279823"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.904,
+      "bbox": [
+        268,
+        503,
+        1092,
+        528
+      ],
+      "crop_file": "p0_text_field_018.jpg",
+      "value": "(35138"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.903,
+      "bbox": [
+        752,
+        1785,
+        778,
+        1810
+      ],
+      "crop_file": "p0_checkbox_017.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.9,
+      "bbox": [
+        248,
+        571,
+        1090,
+        596
+      ],
+      "crop_file": "p0_text_field_019.jpg",
+      "value": "Cindy Newton"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.897,
+      "bbox": [
+        268,
+        474,
+        1089,
+        497
+      ],
+      "crop_file": "p0_text_field_020.jpg",
+      "value": "Lowe coaveral station sit. —"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.897,
+      "bbox": [
+        1059,
+        1030,
+        1084,
+        1055
+      ],
+      "crop_file": "p0_checkbox_018.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.893,
+      "bbox": [
+        160,
+        179,
+        1097,
+        204
+      ],
+      "crop_file": "p0_text_field_021.jpg",
+      "value": "Carlos Fry Se ee"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.891,
+      "bbox": [
+        249,
+        339,
+        1095,
+        364
+      ],
+      "crop_file": "p0_text_field_022.jpg",
+      "value": ""
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.888,
+      "bbox": [
+        325,
+        644,
+        465,
+        669
+      ],
+      "crop_file": "p0_text_field_023.jpg",
+      "value": "Heather Wu"
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.879,
+      "bbox": [
+        181,
+        1028,
+        207,
+        1053
+      ],
+      "crop_file": "p0_checkbox_019.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.875,
+      "bbox": [
+        887,
+        1688,
+        1592,
+        1712
+      ],
+      "crop_file": "p0_text_field_024.jpg",
+      "value": "Others experience edae."
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.873,
+      "bbox": [
+        295,
+        370,
+        1090,
+        395
+      ],
+      "crop_file": "p0_text_field_025.jpg",
+      "value": "- Artist whom her."
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.865,
+      "bbox": [
+        634,
+        411,
+        1095,
+        436
+      ],
+      "crop_file": "p0_text_field_026.jpg",
+      "value": "Us fact."
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.832,
+      "bbox": [
+        560,
+        1785,
+        586,
+        1810
+      ],
+      "crop_file": "p0_checkbox_020.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.803,
+      "bbox": [
+        263,
+        534,
+        1082,
+        557
+      ],
+      "crop_file": "p0_text_field_027.jpg",
+      "value": ": TOtal join."
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.792,
+      "bbox": [
+        944,
+        1325,
+        970,
+        1350
+      ],
+      "crop_file": "p0_checkbox_021.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.766,
+      "bbox": [
+        260,
+        211,
+        1081,
+        234
+      ],
+      "crop_file": "p0_text_field_028.jpg",
+      "value": "Lcancumer."
+    },
+    {
+      "page": 0,
+      "field_type": "checkbox",
+      "confidence": 0.757,
+      "bbox": [
+        946,
+        1288,
+        973,
+        1313
+      ],
+      "crop_file": "p0_checkbox_022.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 0,
+      "field_type": "text_field",
+      "confidence": 0.533,
+      "bbox": [
+        737,
+        273,
+        813,
+        299
+      ],
+      "crop_file": "p0_text_field_029.jpg",
+      "value": ""
+    },
+    {
+      "page": 1,
+      "field_type": "case_number",
+      "confidence": 0.966,
+      "bbox": [
+        1109,
+        175,
+        1589,
+        215
+      ],
+      "crop_file": "p1_case_number_001.jpg",
+      "value": "UD-396468"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.961,
+      "bbox": [
+        189,
+        625,
+        215,
+        651
+      ],
+      "crop_file": "p1_checkbox_001.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.956,
+      "bbox": [
+        295,
+        1480,
+        1566,
+        1587
+      ],
+      "crop_file": "p1_text_field_001.jpg",
+      "value": "Through."
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.956,
+      "bbox": [
+        242,
+        1863,
+        266,
+        1888
+      ],
+      "crop_file": "p1_checkbox_002.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.954,
+      "bbox": [
+        186,
+        791,
+        1588,
+        868
+      ],
+      "crop_file": "p1_text_field_002.jpg",
+      "value": "Lawyer method consider."
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.953,
+      "bbox": [
+        242,
+        1018,
+        267,
+        1043
+      ],
+      "crop_file": "p1_checkbox_003.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.951,
+      "bbox": [
+        242,
+        1902,
+        266,
+        1927
+      ],
+      "crop_file": "p1_checkbox_004.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.951,
+      "bbox": [
+        242,
+        980,
+        267,
+        1004
+      ],
+      "crop_file": "p1_checkbox_005.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.949,
+      "bbox": [
+        993,
+        394,
+        1018,
+        420
+      ],
+      "crop_file": "p1_checkbox_006.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.948,
+      "bbox": [
+        242,
+        582,
+        267,
+        608
+      ],
+      "crop_file": "p1_checkbox_007.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.948,
+      "bbox": [
+        242,
+        1825,
+        266,
+        1850
+      ],
+      "crop_file": "p1_checkbox_008.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.947,
+      "bbox": [
+        800,
+        1850,
+        825,
+        1875
+      ],
+      "crop_file": "p1_checkbox_009.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.947,
+      "bbox": [
+        189,
+        1601,
+        215,
+        1626
+      ],
+      "crop_file": "p1_checkbox_010.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.947,
+      "bbox": [
+        249,
+        1652,
+        1562,
+        1718
+      ],
+      "crop_file": "p1_text_field_003.jpg",
+      "value": "ABHSIT 80h RAGIISEYE Check."
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.946,
+      "bbox": [
+        189,
+        1300,
+        214,
+        1325
+      ],
+      "crop_file": "p1_checkbox_011.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.945,
+      "bbox": [
+        1121,
+        468,
+        1572,
+        495
+      ],
+      "crop_file": "p1_text_field_004.jpg",
+      "value": "Word agreement officer."
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.943,
+      "bbox": [
+        856,
+        1921,
+        1580,
+        1987
+      ],
+      "crop_file": "p1_text_field_005.jpg",
+      "value": "Chath SRL:"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.943,
+      "bbox": [
+        188,
+        317,
+        1601,
+        380
+      ],
+      "crop_file": "p1_text_field_006.jpg",
+      "value": "Very change. ES"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.943,
+      "bbox": [
+        241,
+        1787,
+        266,
+        1812
+      ],
+      "crop_file": "p1_checkbox_012.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.943,
+      "bbox": [
+        253,
+        187,
+        1093,
+        218
+      ],
+      "crop_file": "p1_text_field_007.jpg",
+      "value": "Norman Boyer"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.942,
+      "bbox": [
+        800,
+        1785,
+        825,
+        1810
+      ],
+      "crop_file": "p1_checkbox_013.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.942,
+      "bbox": [
+        190,
+        1104,
+        214,
+        1128
+      ],
+      "crop_file": "p1_checkbox_014.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.941,
+      "bbox": [
+        1246,
+        1420,
+        1502,
+        1446
+      ],
+      "crop_file": "p1_text_field_008.jpg",
+      "value": "Discussion foot actuall"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.941,
+      "bbox": [
+        240,
+        660,
+        266,
+        685
+      ],
+      "crop_file": "p1_checkbox_015.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.941,
+      "bbox": [
+        556,
+        583,
+        581,
+        608
+      ],
+      "crop_file": "p1_checkbox_016.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.939,
+      "bbox": [
+        626,
+        394,
+        651,
+        418
+      ],
+      "crop_file": "p1_checkbox_017.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.936,
+      "bbox": [
+        189,
+        1168,
+        214,
+        1194
+      ],
+      "crop_file": "p1_checkbox_018.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.936,
+      "bbox": [
+        242,
+        1418,
+        267,
+        1443
+      ],
+      "crop_file": "p1_checkbox_019.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.935,
+      "bbox": [
+        243,
+        544,
+        267,
+        569
+      ],
+      "crop_file": "p1_checkbox_020.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.932,
+      "bbox": [
+        189,
+        1652,
+        214,
+        1676
+      ],
+      "crop_file": "p1_checkbox_021.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.932,
+      "bbox": [
+        190,
+        943,
+        216,
+        968
+      ],
+      "crop_file": "p1_checkbox_022.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.932,
+      "bbox": [
+        557,
+        543,
+        582,
+        569
+      ],
+      "crop_file": "p1_checkbox_023.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.932,
+      "bbox": [
+        1316,
+        391,
+        1563,
+        425
+      ],
+      "crop_file": "p1_text_field_009.jpg",
+      "value": "Among value that sou"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.932,
+      "bbox": [
+        241,
+        728,
+        266,
+        753
+      ],
+      "crop_file": "p1_checkbox_024.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.927,
+      "bbox": [
+        246,
+        147,
+        1091,
+        179
+      ],
+      "crop_file": "p1_text_field_010.jpg",
+      "value": "‘Jerry Bartlett"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.925,
+      "bbox": [
+        190,
+        765,
+        215,
+        790
+      ],
+      "crop_file": "p1_checkbox_025.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.924,
+      "bbox": [
+        241,
+        694,
+        266,
+        718
+      ],
+      "crop_file": "p1_checkbox_026.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.924,
+      "bbox": [
+        243,
+        508,
+        268,
+        533
+      ],
+      "crop_file": "p1_checkbox_027.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.923,
+      "bbox": [
+        852,
+        429,
+        877,
+        454
+      ],
+      "crop_file": "p1_checkbox_028.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.918,
+      "bbox": [
+        1045,
+        430,
+        1069,
+        455
+      ],
+      "crop_file": "p1_checkbox_029.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.915,
+      "bbox": [
+        241,
+        1347,
+        266,
+        1372
+      ],
+      "crop_file": "p1_checkbox_030.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.912,
+      "bbox": [
+        500,
+        1130,
+        854,
+        1160
+      ],
+      "crop_file": "p1_text_field_011.jpg",
+      "value": "Allow pull rise."
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.908,
+      "bbox": [
+        754,
+        1379,
+        1001,
+        1409
+      ],
+      "crop_file": "p1_text_field_012.jpg",
+      "value": "Big choose."
+    },
+    {
+      "page": 1,
+      "field_type": "date_field",
+      "confidence": 0.905,
+      "bbox": [
+        1426,
+        1880,
+        1562,
+        1907
+      ],
+      "crop_file": "p1_date_field_001.jpg",
+      "value": "11/21/2013"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.899,
+      "bbox": [
+        800,
+        1921,
+        826,
+        1946
+      ],
+      "crop_file": "p1_checkbox_031.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "date_field",
+      "confidence": 0.898,
+      "bbox": [
+        399,
+        249,
+        772,
+        275
+      ],
+      "crop_file": "p1_date_field_002.jpg",
+      "value": "10/29/1976"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.898,
+      "bbox": [
+        847,
+        468,
+        873,
+        493
+      ],
+      "crop_file": "p1_checkbox_032.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.897,
+      "bbox": [
+        790,
+        582,
+        1580,
+        610
+      ],
+      "crop_file": "p1_text_field_013.jpg",
+      "value": "Else hundred suggest certainly."
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.893,
+      "bbox": [
+        189,
+        877,
+        214,
+        902
+      ],
+      "crop_file": "p1_checkbox_033.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.883,
+      "bbox": [
+        1385,
+        431,
+        1571,
+        457
+      ],
+      "crop_file": "p1_text_field_014.jpg",
+      "value": "“Administration q"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.878,
+      "bbox": [
+        410,
+        507,
+        434,
+        532
+      ],
+      "crop_file": "p1_checkbox_034.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.873,
+      "bbox": [
+        242,
+        1938,
+        267,
+        1963
+      ],
+      "crop_file": "p1_checkbox_035.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "dollar_amount",
+      "confidence": 0.864,
+      "bbox": [
+        500,
+        428,
+        727,
+        459
+      ],
+      "crop_file": "p1_dollar_amount_001.jpg",
+      "value": "$4887.00"
+    },
+    {
+      "page": 1,
+      "field_type": "text_field",
+      "confidence": 0.863,
+      "bbox": [
+        479,
+        726,
+        1577,
+        754
+      ],
+      "crop_file": "p1_text_field_015.jpg",
+      "value": "Reason ago."
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.861,
+      "bbox": [
+        557,
+        467,
+        582,
+        493
+      ],
+      "crop_file": "p1_checkbox_036.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 1,
+      "field_type": "checkbox",
+      "confidence": 0.827,
+      "bbox": [
+        189,
+        1252,
+        215,
+        1278
+      ],
+      "crop_file": "p1_checkbox_037.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "case_number",
+      "confidence": 0.962,
+      "bbox": [
+        1110,
+        175,
+        1589,
+        215
+      ],
+      "crop_file": "p2_case_number_001.jpg",
+      "value": "UD-461434"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.954,
+      "bbox": [
+        297,
+        1020,
+        321,
+        1045
+      ],
+      "crop_file": "p2_checkbox_001.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.952,
+      "bbox": [
+        191,
+        439,
+        216,
+        463
+      ],
+      "crop_file": "p2_checkbox_002.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.948,
+      "bbox": [
+        191,
+        1187,
+        217,
+        1213
+      ],
+      "crop_file": "p2_checkbox_003.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "date_field",
+      "confidence": 0.945,
+      "bbox": [
+        345,
+        934,
+        588,
+        961
+      ],
+      "crop_file": "p2_date_field_001.jpg",
+      "value": "10/28/2004"
+    },
+    {
+      "page": 2,
+      "field_type": "date_field",
+      "confidence": 0.944,
+      "bbox": [
+        897,
+        660,
+        1220,
+        685
+      ],
+      "crop_file": "p2_date_field_002.jpg",
+      "value": "07/14/2007"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.944,
+      "bbox": [
+        191,
+        1305,
+        216,
+        1331
+      ],
+      "crop_file": "p2_checkbox_004.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.943,
+      "bbox": [
+        523,
+        1536,
+        549,
+        1561
+      ],
+      "crop_file": "p2_checkbox_005.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.94,
+      "bbox": [
+        290,
+        1534,
+        314,
+        1559
+      ],
+      "crop_file": "p2_checkbox_006.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "text_field",
+      "confidence": 0.938,
+      "bbox": [
+        246,
+        185,
+        1094,
+        217
+      ],
+      "crop_file": "p2_text_field_001.jpg",
+      "value": ": Allison Conley"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.937,
+      "bbox": [
+        421,
+        1617,
+        445,
+        1641
+      ],
+      "crop_file": "p2_checkbox_007.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.935,
+      "bbox": [
+        191,
+        1262,
+        216,
+        1287
+      ],
+      "crop_file": "p2_checkbox_008.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.931,
+      "bbox": [
+        243,
+        699,
+        268,
+        724
+      ],
+      "crop_file": "p2_checkbox_009.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.93,
+      "bbox": [
+        190,
+        393,
+        215,
+        419
+      ],
+      "crop_file": "p2_checkbox_010.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.929,
+      "bbox": [
+        466,
+        779,
+        492,
+        804
+      ],
+      "crop_file": "p2_checkbox_011.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.928,
+      "bbox": [
+        245,
+        1057,
+        269,
+        1081
+      ],
+      "crop_file": "p2_checkbox_012.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.926,
+      "bbox": [
+        245,
+        1121,
+        270,
+        1145
+      ],
+      "crop_file": "p2_checkbox_013.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "text_field",
+      "confidence": 0.925,
+      "bbox": [
+        250,
+        148,
+        1091,
+        180
+      ],
+      "crop_file": "p2_text_field_002.jpg",
+      "value": "Colin long"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.923,
+      "bbox": [
+        290,
+        1456,
+        315,
+        1481
+      ],
+      "crop_file": "p2_checkbox_014.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "date_field",
+      "confidence": 0.923,
+      "bbox": [
+        807,
+        857,
+        1138,
+        882
+      ],
+      "crop_file": "p2_date_field_003.jpg",
+      "value": "11/18/1995"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.922,
+      "bbox": [
+        243,
+        857,
+        268,
+        882
+      ],
+      "crop_file": "p2_checkbox_015.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "date_field",
+      "confidence": 0.922,
+      "bbox": [
+        352,
+        264,
+        679,
+        289
+      ],
+      "crop_file": "p2_date_field_004.jpg",
+      "value": "09/14/1994"
+    },
+    {
+      "page": 2,
+      "field_type": "text_field",
+      "confidence": 0.919,
+      "bbox": [
+        796,
+        697,
+        1538,
+        726
+      ],
+      "crop_file": "p2_text_field_003.jpg",
+      "value": "Style magazine."
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.918,
+      "bbox": [
+        191,
+        513,
+        216,
+        538
+      ],
+      "crop_file": "p2_checkbox_016.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "date_field",
+      "confidence": 0.915,
+      "bbox": [
+        788,
+        742,
+        1122,
+        767
+      ],
+      "crop_file": "p2_date_field_005.jpg",
+      "value": "12/20/1977"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.913,
+      "bbox": [
+        243,
+        660,
+        268,
+        685
+      ],
+      "crop_file": "p2_checkbox_017.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "text_field",
+      "confidence": 0.911,
+      "bbox": [
+        1202,
+        1822,
+        1549,
+        1851
+      ],
+      "crop_file": "p2_text_field_004.jpg",
+      "value": "Drop order."
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.909,
+      "bbox": [
+        147,
+        1875,
+        173,
+        1900
+      ],
+      "crop_file": "p2_checkbox_018.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.903,
+      "bbox": [
+        297,
+        978,
+        322,
+        1004
+      ],
+      "crop_file": "p2_checkbox_019.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.901,
+      "bbox": [
+        523,
+        1457,
+        548,
+        1482
+      ],
+      "crop_file": "p2_checkbox_020.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "text_field",
+      "confidence": 0.898,
+      "bbox": [
+        663,
+        1874,
+        970,
+        1902
+      ],
+      "crop_file": "p2_text_field_005.jpg",
+      "value": "Cup."
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.889,
+      "bbox": [
+        287,
+        1695,
+        313,
+        1721
+      ],
+      "crop_file": "p2_checkbox_021.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.887,
+      "bbox": [
+        284,
+        1616,
+        311,
+        1641
+      ],
+      "crop_file": "p2_checkbox_022.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.88,
+      "bbox": [
+        421,
+        1697,
+        445,
+        1721
+      ],
+      "crop_file": "p2_checkbox_023.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.877,
+      "bbox": [
+        242,
+        778,
+        267,
+        803
+      ],
+      "crop_file": "p2_checkbox_024.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.875,
+      "bbox": [
+        147,
+        1922,
+        173,
+        1947
+      ],
+      "crop_file": "p2_checkbox_025.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "date_field",
+      "confidence": 0.863,
+      "bbox": [
+        342,
+        811,
+        585,
+        839
+      ],
+      "crop_file": "p2_date_field_006.jpg",
+      "value": "05/03/1999"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.833,
+      "bbox": [
+        189,
+        618,
+        214,
+        644
+      ],
+      "crop_file": "p2_checkbox_026.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.826,
+      "bbox": [
+        147,
+        1824,
+        173,
+        1850
+      ],
+      "crop_file": "p2_checkbox_027.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.815,
+      "bbox": [
+        147,
+        1354,
+        173,
+        1379
+      ],
+      "crop_file": "p2_checkbox_028.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.8,
+      "bbox": [
+        244,
+        895,
+        268,
+        921
+      ],
+      "crop_file": "p2_checkbox_029.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "text_field",
+      "confidence": 0.759,
+      "bbox": [
+        615,
+        1186,
+        1440,
+        1216
+      ],
+      "crop_file": "p2_text_field_006.jpg",
+      "value": "lr."
+    },
+    {
+      "page": 2,
+      "field_type": "checkbox",
+      "confidence": 0.665,
+      "bbox": [
+        147,
+        1773,
+        174,
+        1799
+      ],
+      "crop_file": "p2_checkbox_030.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 2,
+      "field_type": "text_field",
+      "confidence": 0.318,
+      "bbox": [
+        395,
+        1186,
+        1219,
+        1217
+      ],
+      "crop_file": "p2_text_field_007.jpg",
+      "value": "tution another leader."
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.97,
+      "bbox": [
+        176,
+        1440,
+        949,
+        1532
+      ],
+      "crop_file": "p3_text_field_001.jpg",
+      "value": "Security claim."
+    },
+    {
+      "page": 3,
+      "field_type": "case_number",
+      "confidence": 0.969,
+      "bbox": [
+        1108,
+        173,
+        1588,
+        213
+      ],
+      "crop_file": "p3_case_number_001.jpg",
+      "value": "UD-287954"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.967,
+      "bbox": [
+        749,
+        878,
+        774,
+        903
+      ],
+      "crop_file": "p3_checkbox_001.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.965,
+      "bbox": [
+        202,
+        353,
+        1591,
+        476
+      ],
+      "crop_file": "p3_text_field_002.jpg",
+      "value": "Sense reality."
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.963,
+      "bbox": [
+        748,
+        680,
+        774,
+        706
+      ],
+      "crop_file": "p3_checkbox_002.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.96,
+      "bbox": [
+        737,
+        951,
+        1593,
+        1118
+      ],
+      "crop_file": "p3_text_field_003.jpg",
+      "value": "Impact seek computer."
+    },
+    {
+      "page": 3,
+      "field_type": "signature",
+      "confidence": 0.96,
+      "bbox": [
+        98,
+        1615,
+        764,
+        1654
+      ],
+      "crop_file": "p3_signature_001.jpg",
+      "value": "Much throw."
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.96,
+      "bbox": [
+        190,
+        760,
+        215,
+        785
+      ],
+      "crop_file": "p3_checkbox_003.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.957,
+      "bbox": [
+        190,
+        803,
+        215,
+        827
+      ],
+      "crop_file": "p3_checkbox_004.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.945,
+      "bbox": [
+        749,
+        753,
+        774,
+        778
+      ],
+      "crop_file": "p3_checkbox_005.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.945,
+      "bbox": [
+        95,
+        1935,
+        763,
+        1974
+      ],
+      "crop_file": "p3_text_field_004.jpg",
+      "value": "Carry change."
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.943,
+      "bbox": [
+        190,
+        847,
+        215,
+        872
+      ],
+      "crop_file": "p3_checkbox_006.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.936,
+      "bbox": [
+        937,
+        1262,
+        962,
+        1286
+      ],
+      "crop_file": "p3_checkbox_007.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.933,
+      "bbox": [
+        449,
+        759,
+        647,
+        788
+      ],
+      "crop_file": "p3_text_field_005.jpg",
+      "value": "season although"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.93,
+      "bbox": [
+        245,
+        183,
+        1095,
+        215
+      ],
+      "crop_file": "p3_text_field_006.jpg",
+      "value": ": Sabrina Clarke"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.926,
+      "bbox": [
+        248,
+        146,
+        1092,
+        178
+      ],
+      "crop_file": "p3_text_field_007.jpg",
+      "value": "Josenh Bradshaw"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.924,
+      "bbox": [
+        1372,
+        2124,
+        1598,
+        2172
+      ],
+      "crop_file": "p3_checkbox_008.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "date_field",
+      "confidence": 0.923,
+      "bbox": [
+        801,
+        794,
+        1138,
+        819
+      ],
+      "crop_file": "p3_date_field_001.jpg",
+      "value": "01/18/2003"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.923,
+      "bbox": [
+        749,
+        923,
+        774,
+        949
+      ],
+      "crop_file": "p3_checkbox_009.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.922,
+      "bbox": [
+        1043,
+        712,
+        1300,
+        741
+      ],
+      "crop_file": "p3_text_field_008.jpg",
+      "value": "Something talk."
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.92,
+      "bbox": [
+        377,
+        1364,
+        949,
+        1399
+      ],
+      "crop_file": "p3_text_field_009.jpg",
+      "value": "Know feel."
+    },
+    {
+      "page": 3,
+      "field_type": "date_field",
+      "confidence": 0.92,
+      "bbox": [
+        161,
+        1883,
+        486,
+        1908
+      ],
+      "crop_file": "p3_date_field_002.jpg",
+      "value": "08/06/1994"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.915,
+      "bbox": [
+        1228,
+        1447,
+        1590,
+        1472
+      ],
+      "crop_file": "p3_text_field_010.jpg",
+      "value": "Serve question modern."
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.91,
+      "bbox": [
+        957,
+        2125,
+        1181,
+        2172
+      ],
+      "crop_file": "p3_checkbox_010.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.907,
+      "bbox": [
+        1287,
+        1406,
+        1596,
+        1430
+      ],
+      "crop_file": "p3_text_field_011.jpg",
+      "value": "More board."
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.904,
+      "bbox": [
+        759,
+        1262,
+        784,
+        1287
+      ],
+      "crop_file": "p3_checkbox_011.jpg",
+      "checked": false,
+      "value": "☐ UNCHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.904,
+      "bbox": [
+        147,
+        242,
+        173,
+        267
+      ],
+      "crop_file": "p3_checkbox_012.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "signature",
+      "confidence": 0.901,
+      "bbox": [
+        167,
+        1559,
+        483,
+        1585
+      ],
+      "crop_file": "p3_signature_002.jpg",
+      "value": "07/05/2022"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.894,
+      "bbox": [
+        712,
+        2124,
+        941,
+        2172
+      ],
+      "crop_file": "p3_checkbox_013.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "date_field",
+      "confidence": 0.88,
+      "bbox": [
+        1244,
+        1490,
+        1595,
+        1515
+      ],
+      "crop_file": "p3_date_field_003.jpg",
+      "value": "05/06/2005"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.878,
+      "bbox": [
+        147,
+        292,
+        173,
+        317
+      ],
+      "crop_file": "p3_checkbox_014.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.875,
+      "bbox": [
+        691,
+        1136,
+        788,
+        1164
+      ],
+      "crop_file": "p3_text_field_012.jpg",
+      "value": "Perform."
+    },
+    {
+      "page": 3,
+      "field_type": "text_field",
+      "confidence": 0.873,
+      "bbox": [
+        1220,
+        1367,
+        1589,
+        1392
+      ],
+      "crop_file": "p3_text_field_013.jpg",
+      "value": "+1-982-248-0970x3574"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.857,
+      "bbox": [
+        149,
+        1138,
+        175,
+        1164
+      ],
+      "crop_file": "p3_checkbox_015.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    },
+    {
+      "page": 3,
+      "field_type": "checkbox",
+      "confidence": 0.761,
+      "bbox": [
+        149,
+        530,
+        175,
+        556
+      ],
+      "crop_file": "p3_checkbox_016.jpg",
+      "checked": true,
+      "value": "✓ CHECKED"
+    }
+  ]
+}
