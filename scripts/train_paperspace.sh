@@ -65,18 +65,63 @@ print(c.get('project', 'output'))
 echo "[setup] Project: $PROJECT"
 echo ""
 
-# ── Step 1: Collect form (download PDF + synthetic data + auto-labels) ────
+# ── Step 1: Collect form (download PDF + synthetic data) ────────────────
 FRAMES_DIR="runs/$PROJECT/frames"
+FORM_LABEL_MODE=$(uv run python -c "
+import json
+c = json.load(open('config.json'))
+print(c.get('form_label_mode', 'programmatic'))
+" 2>/dev/null || echo "programmatic")
+
 if [ -d "$FRAMES_DIR" ] && [ "$(ls -A "$FRAMES_DIR" 2>/dev/null | head -1)" ]; then
     FRAME_COUNT=$(ls "$FRAMES_DIR"/*.jpg 2>/dev/null | wc -l)
     echo "[collect] ✅ Frames already exist ($FRAME_COUNT images) — skipping"
 else
     echo "[collect] Generating synthetic training data..."
+    echo "[collect] Form label mode: $FORM_LABEL_MODE"
     uv run .agents/skills/collect/scripts/collect_form.py
 fi
 echo ""
 
-# ── Step 2: Augment ───────────────────────────────────────────────────────
+# ── Step 2: Label (if vision mode) ────────────────────────────────────────
+if [ "$FORM_LABEL_MODE" = "vision" ]; then
+    LABEL_COUNT=$(ls "$FRAMES_DIR"/*.txt 2>/dev/null | wc -l || echo 0)
+    if [ "$LABEL_COUNT" -gt 0 ]; then
+        echo "[label] ✅ Labels already exist ($LABEL_COUNT files) — skipping"
+    else
+        LABEL_MODE=$(uv run python -c "
+import json
+c = json.load(open('config.json'))
+print(c.get('label_mode', 'gpt'))
+")
+        echo "[label] Running vision labeling (mode: $LABEL_MODE)..."
+        
+        case "$LABEL_MODE" in
+            cua+sam)
+                uv run .agents/skills/label/scripts/label_cua_sam.py
+                ;;
+            gemini)
+                uv run .agents/skills/label/scripts/label_gemini.py
+                ;;
+            gpt)
+                uv run .agents/skills/label/scripts/run.py
+                ;;
+            codex)
+                echo "[label] ❌ Error: label_mode=codex requires Cursor (not available on Paperspace)"
+                echo "[label] Use label_mode=gpt, gemini, or cua+sam instead"
+                echo "[label] Or run labeling locally and upload labeled data"
+                exit 1
+                ;;
+            *)
+                echo "[label] ❌ Unknown label_mode: $LABEL_MODE"
+                exit 1
+                ;;
+        esac
+    fi
+    echo ""
+fi
+
+# ── Step 3: Augment ───────────────────────────────────────────────────────
 AUG_DIR="runs/$PROJECT/augmented"
 if [ -d "$AUG_DIR" ] && [ "$(ls -A "$AUG_DIR" 2>/dev/null | head -1)" ]; then
     AUG_COUNT=$(ls "$AUG_DIR"/*.jpg 2>/dev/null | wc -l)
@@ -87,14 +132,14 @@ else
 fi
 echo ""
 
-# ── Step 3: Train ─────────────────────────────────────────────────────────
+# ── Step 4: Train ─────────────────────────────────────────────────────────
 WEIGHTS="runs/$PROJECT/weights/best.pt"
 echo "[train] Starting YOLOv8 training on GPU..."
 echo "[train] This will take a few minutes with CUDA..."
 uv run .agents/skills/train/scripts/run.py
 echo ""
 
-# ── Step 4: Eval ──────────────────────────────────────────────────────────
+# ── Step 5: Eval ──────────────────────────────────────────────────────────
 echo "[eval] Evaluating trained model..."
 uv run .agents/skills/eval/scripts/run.py
 echo ""

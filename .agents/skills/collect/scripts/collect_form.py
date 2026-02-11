@@ -262,10 +262,14 @@ def render_and_label(
     frames_dir: Path,
     variation_idx: int,
     dpi: int = RENDER_DPI,
+    skip_labels: bool = False,
 ) -> list[Path]:
     """Render each page of *doc* to a JPEG and write matching YOLO label files.
 
     Returns the list of image paths created.
+    
+    If skip_labels is True, only render images without generating label files
+    (for vision-based labeling mode).
     """
     created: list[Path] = []
 
@@ -282,26 +286,28 @@ def render_and_label(
         img_path = frames_dir / img_name
         pix.save(str(img_path))
 
-        # Build YOLO label lines
-        fields = page_fields.get(page_idx, [])
-        lines: list[str] = []
-        for f in fields:
-            r = f["rect"]
-            line = pdf_rect_to_yolo(
-                field_x0=r.x0,
-                field_y0=r.y0,
-                field_x1=r.x1,
-                field_y1=r.y1,
-                page_width=page_rect.width,
-                page_height=page_rect.height,
-                img_width=img_w,
-                img_height=img_h,
-                class_id=f["class_id"],
-            )
-            lines.append(line)
+        # Build YOLO label lines (skip if vision mode)
+        if not skip_labels:
+            fields = page_fields.get(page_idx, [])
+            lines: list[str] = []
+            for f in fields:
+                r = f["rect"]
+                line = pdf_rect_to_yolo(
+                    field_x0=r.x0,
+                    field_y0=r.y0,
+                    field_x1=r.x1,
+                    field_y1=r.y1,
+                    page_width=page_rect.width,
+                    page_height=page_rect.height,
+                    img_width=img_w,
+                    img_height=img_h,
+                    class_id=f["class_id"],
+                )
+                lines.append(line)
 
-        label_path = img_path.with_suffix(".txt")
-        label_path.write_text("\n".join(lines), encoding="utf-8")
+            label_path = img_path.with_suffix(".txt")
+            label_path.write_text("\n".join(lines), encoding="utf-8")
+        
         created.append(img_path)
 
     return created
@@ -340,6 +346,14 @@ def main() -> int:
 
     num_variations = int(config.get("num_variations", 100))
     classes_from_config: list[str] = config.get("classes", [])
+    
+    # Check form_label_mode: "programmatic" (default) or "vision"
+    form_label_mode = config.get("form_label_mode", "programmatic").lower()
+    skip_labels = form_label_mode == "vision"
+    
+    if skip_labels:
+        print("[collect_form] Vision labeling mode — will render images without labels")
+        print("[collect_form] Run the label skill after collection")
 
     # Build initial class_to_id from config classes (preserves order)
     class_to_id: dict[str, int] = {}
@@ -389,19 +403,24 @@ def main() -> int:
         doc = fitz.open(str(pdf_path))
         fill_prob = random.uniform(0.5, 1.0)  # vary fill completeness
         fill_form_variation(doc, [], fill_probability=fill_prob)
-        images = render_and_label(doc, page_fields, frames_dir, var_idx)
+        images = render_and_label(doc, page_fields, frames_dir, var_idx, skip_labels=skip_labels)
         all_images.extend(images)
         doc.close()
 
         if (var_idx + 1) % 20 == 0 or var_idx == 0:
             print(f"  Generated variation {var_idx + 1}/{num_variations}")
 
-    # Step 4: Write classes.txt
+    # Step 4: Write classes.txt (always, even in vision mode)
     classes_path = output_dir / "classes.txt"
     names = [name for name, _ in sorted(class_to_id.items(), key=lambda item: item[1])]
     classes_path.write_text("\n".join(names), encoding="utf-8")
 
-    print(f"[collect_form] Done. {len(all_images)} images with labels in {frames_dir}")
+    if skip_labels:
+        print(f"[collect_form] Done. {len(all_images)} images (no labels) in {frames_dir}")
+        print(f"[collect_form] Next: run label skill with label_mode={config.get('label_mode', 'codex')}")
+    else:
+        print(f"[collect_form] Done. {len(all_images)} images with labels in {frames_dir}")
+    
     print(f"[collect_form] Classes ({len(class_to_id)}): {', '.join(names)}")
     print(f"[collect_form] Class map: {classes_path}")
     return 0

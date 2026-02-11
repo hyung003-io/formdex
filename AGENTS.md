@@ -37,21 +37,36 @@ Check `source_type` in config.json first:
 
 ### Form Mode (`source_type == "form"`)
 
+Form mode supports **two labeling strategies** controlled by `form_label_mode` in config.json:
+
+- **`"programmatic"`** (default): Fast, free. Uses PDF AcroForm metadata to auto-generate labels. No API keys or agents needed.
+- **`"vision"`**: Uses agents/vision models (CUA+SAM, Gemini, GPT, Codex) to label rendered images. Allows comparison with vision-based detection.
+
+#### Iteration Logic
+
 1. **No frames** (frames/ empty or missing):
    → Run collect_form: `uv run .agents/skills/collect/scripts/collect_form.py`
-   This downloads the PDF, fills it with synthetic data, renders to images, and auto-generates YOLO labels.
-   Both collection AND labeling happen in this single step.
+   - `form_label_mode=programmatic`: Renders images + auto-generates labels (collection + labeling in one step)
+   - `form_label_mode=vision`: Renders images only (no labels)
 
-2. **Labels but no model** (weights/best.pt missing):
+2. **Frames but no labels** (no .txt files in frames/, only happens in vision mode):
+   → Run label skill based on `label_mode`:
+     - `cua+sam`: `uv run .agents/skills/label/scripts/label_cua_sam.py`
+     - `gemini`: `uv run .agents/skills/label/scripts/label_gemini.py`
+     - `gpt` (parallel): `bash .agents/skills/label/scripts/dispatch.sh`
+     - `codex` (parallel): `bash .agents/skills/label/scripts/dispatch.sh`
+     - `gpt` (single): `uv run .agents/skills/label/scripts/run.py`
+
+3. **Labels but no model** (weights/best.pt missing):
    → Run augment: `uv run .agents/skills/augment/scripts/run.py`
    → Run train: `uv run .agents/skills/train/scripts/run.py`
 
-3. **Model but no eval** (eval_results.json missing):
+4. **Model but no eval** (eval_results.json missing):
    → Run eval: `uv run .agents/skills/eval/scripts/run.py`
 
-4. **Eval exists, accuracy >= target**: → `<promise>COMPLETE</promise>`
+5. **Eval exists, accuracy >= target**: → `<promise>COMPLETE</promise>`
 
-5. **Eval exists, accuracy < target**:
+6. **Eval exists, accuracy < target**:
    → Increase `num_variations` in config.json and re-run collect_form
    → Re-augment, re-train, re-evaluate
 

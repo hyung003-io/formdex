@@ -16,6 +16,7 @@
   "num_agents": 4,
   "fps": 1,
   "output_dir": "output",
+  "form_label_mode": "vision",
   "label_mode": "codex",
   "model": "gpt-5-nano",
   "yolo_model": "yolov8n.pt",
