@@ -75,32 +75,98 @@ def classify_field(widget: Any) -> str:
 # Synthetic data generation
 # ---------------------------------------------------------------------------
 
-def random_text_for_class(cls: str) -> str:
-    """Return a random plausible string for a given field class."""
+def random_text_for_class(cls: str, max_chars: int = 0) -> str:
+    """Return a random plausible string for a given field class.
+
+    When *max_chars* > 0 the returned text is padded/extended so it
+    fills the available horizontal space, mimicking real-world forms
+    where people write edge-to-edge.
+    """
     if cls == "date_field":
-        return fake.date(pattern="%m/%d/%Y")
-    if cls == "dollar_amount":
-        return f"{random.randint(100, 15000)}.{random.randint(0, 99):02d}"
-    if cls == "case_number":
-        return f"{random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ')}{random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ')}-{random.randint(10000, 99999)}"
-    if cls == "signature":
-        return fake.name()
-    # Generic text — could be name, address, etc.  Mix it up.
-    generators = [
-        fake.name,
-        fake.address,
-        fake.city,
-        fake.state,
-        fake.zipcode,
-        fake.phone_number,
-        lambda: fake.sentence(nb_words=4),
-    ]
-    return random.choice(generators)()
+        text = fake.date(pattern="%m/%d/%Y")
+    elif cls == "dollar_amount":
+        text = f"{random.randint(100, 15000)}.{random.randint(0, 99):02d}"
+    elif cls == "case_number":
+        text = f"{random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ')}{random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ')}-{random.randint(10000, 99999)}"
+    elif cls == "signature":
+        text = fake.name()
+    else:
+        # Generic text — could be name, address, etc.  Mix it up.
+        generators = [
+            fake.name,
+            lambda: fake.address().replace("\n", ", "),
+            fake.city,
+            fake.state,
+            fake.zipcode,
+            fake.phone_number,
+            lambda: fake.sentence(nb_words=4),
+        ]
+        text = random.choice(generators)()
+
+    # Pad / extend text to fill the field's horizontal extent
+    if max_chars > 0 and len(text) < max_chars:
+        if cls == "text_field":
+            # Add extra realistic content to fill the space
+            while len(text) < max_chars:
+                extra = random.choice([
+                    f", {fake.city()}", f" {fake.state()}",
+                    f" {fake.zipcode()}", f" {fake.street_address()}",
+                    f", {fake.name()}", f" {fake.phone_number()}",
+                ])
+                text += extra
+            text = text[:max_chars]  # trim to exact limit
+        elif cls == "dollar_amount":
+            # Pad with leading spaces or commas to fill
+            text = text.rjust(max_chars)
+        elif cls == "date_field":
+            # Already fixed width, no padding needed
+            pass
+
+    return text
 
 
 def _is_checkbox(widget: Any) -> bool:
     fts = (widget.field_type_string or "").lower()
     return fts in ("checkbox", "radiobutton", "button")
+
+
+def _estimate_max_chars(widget: Any) -> int:
+    """Estimate how many characters can fit in a widget based on its width.
+
+    Uses a rough heuristic: ~6pt per character at typical form font sizes.
+    This lets us fill fields edge-to-edge like real handwriting / typing.
+    """
+    rect = widget.rect
+    field_width_pt = rect.width  # in PDF points
+    # Average character width is ~5-7pt at 10-12pt font
+    avg_char_width = 5.5
+    return max(1, int(field_width_pt / avg_char_width))
+
+
+def _draw_x_on_checkbox(page: Any, widget: Any) -> None:
+    """Draw an 'X' mark inside a checkbox field rectangle.
+
+    Real-world court forms use hand-drawn X marks, not checkmarks.
+    This draws two diagonal lines to create an X inside the widget rect.
+    """
+    rect = widget.rect
+    # Shrink slightly so the X is inside the box borders
+    margin = min(rect.width, rect.height) * 0.15
+    x0 = rect.x0 + margin
+    y0 = rect.y0 + margin
+    x1 = rect.x1 - margin
+    y1 = rect.y1 - margin
+
+    # Line thickness proportional to box size
+    stroke_w = max(0.8, min(rect.width, rect.height) * 0.08)
+
+    shape = page.new_shape()
+    # Diagonal 1: top-left to bottom-right
+    shape.draw_line(fitz.Point(x0, y0), fitz.Point(x1, y1))
+    # Diagonal 2: top-right to bottom-left
+    shape.draw_line(fitz.Point(x1, y0), fitz.Point(x0, y1))
+    shape.finish(color=(0, 0, 0), width=stroke_w)
+    shape.commit()
 
 
 def fill_form_variation(
@@ -112,6 +178,10 @@ def fill_form_variation(
 
     ``fill_probability`` controls how many fields are filled (rest stay empty)
     so the model sees partially-filled forms too.
+
+    Checkboxes are marked with an X (matching real-world court form behavior)
+    rather than a checkmark.  Text fields are filled to their maximum
+    horizontal extent so the model learns to detect fully-filled fields.
     """
     for page_idx in range(len(doc)):
         page = doc[page_idx]
@@ -122,10 +192,13 @@ def fill_form_variation(
             cls = classify_field(widget)
 
             if _is_checkbox(widget):
-                # Checkbox / radio — randomly toggle on or off
+                # Checkbox / radio — randomly mark with X or leave empty
                 check = random.choice([True, False])
                 try:
                     if check:
+                        # Draw an X mark (real-world court form style)
+                        _draw_x_on_checkbox(page, widget)
+                        # Also set the form value so PDF readers see it
                         on = widget.on_state()
                         if on:
                             widget.field_value = on
@@ -140,7 +213,8 @@ def fill_form_variation(
                 # Can't really fill signature fields programmatically
                 pass
             else:
-                text = random_text_for_class(cls)
+                max_chars = _estimate_max_chars(widget)
+                text = random_text_for_class(cls, max_chars=max_chars)
                 widget.field_value = text
                 try:
                     widget.update()

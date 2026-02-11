@@ -93,9 +93,11 @@ def train_model(
 
     weights_dir.mkdir(parents=True, exist_ok=True)
 
-    # Use MPS (Apple Silicon GPU) if available, otherwise CPU
+    # Device priority: CUDA (Paperspace/cloud GPU) > MPS (Apple Silicon) > CPU
     import torch
-    if torch.backends.mps.is_available():
+    if torch.cuda.is_available():
+        device = "cuda"
+    elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
         device = "mps"
     else:
         device = "cpu"

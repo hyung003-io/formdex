@@ -88,6 +88,35 @@ def _load_fonts() -> tuple:
 
 FONT, FONT_SM, FONT_CHECK = _load_fonts()
 
+# ── Image standardization ──────────────────────────────────────────────────
+
+# Training images are rendered at 200 DPI for US Letter (8.5×11in) = 1700×2200px.
+# Scans & faxes arrive at wildly different sizes.  We normalise to this
+# reference so YOLO sees the same scale it was trained on.
+_REFERENCE_WIDTH = 1700
+_REFERENCE_HEIGHT = 2200
+
+
+def standardize_image(img: Image.Image) -> Image.Image:
+    """Resize an image to the reference training dimensions.
+
+    Maintains aspect ratio and pads with white to exactly
+    _REFERENCE_WIDTH × _REFERENCE_HEIGHT so the model receives
+    consistent input regardless of scan/fax DPI.
+    """
+    w, h = img.size
+    # Scale so the image fits inside the reference box
+    scale = min(_REFERENCE_WIDTH / w, _REFERENCE_HEIGHT / h)
+    new_w = int(w * scale)
+    new_h = int(h * scale)
+    resized = img.resize((new_w, new_h), Image.LANCZOS)
+
+    # Paste onto a white canvas at top-left (forms are top-aligned)
+    canvas = Image.new("RGB", (_REFERENCE_WIDTH, _REFERENCE_HEIGHT), (255, 255, 255))
+    canvas.paste(resized, (0, 0))
+    return canvas
+
+
 # ── Core logic ─────────────────────────────────────────────────────────────
 
 
@@ -122,10 +151,24 @@ def extract_text_from_crop(crop: Image.Image, field_class: str) -> str:
 
 
 def detect_on_image(img: Image.Image, conf: float) -> list[dict]:
-    """Run YOLO on a PIL image and return raw detections."""
+    """Run YOLO on a PIL image and return raw detections.
+
+    The image is standardized to reference training dimensions before
+    inference so scans/faxes at any DPI produce consistent results.
+    Bounding boxes are mapped back to the original image coordinates.
+    """
+    orig_w, orig_h = img.size
+
+    # Standardize to training dimensions
+    std_img = standardize_image(img)
+    std_w, std_h = std_img.size
+
+    # Compute the scale factor used during standardization (for mapping back)
+    fit_scale = min(_REFERENCE_WIDTH / orig_w, _REFERENCE_HEIGHT / orig_h)
+
     # Save to a temp file for ultralytics
     tmp = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
-    img.save(tmp.name, quality=95)
+    std_img.save(tmp.name, quality=95)
     tmp.close()
 
     yolo = get_model()
@@ -138,11 +181,24 @@ def detect_on_image(img: Image.Image, conf: float) -> list[dict]:
         for box in r.boxes:
             x1, y1, x2, y2 = box.xyxy[0].tolist()
             cls_id = int(box.cls[0])
+
+            # Map coordinates back to original image space
+            x1 = int(x1 / fit_scale)
+            y1 = int(y1 / fit_scale)
+            x2 = int(x2 / fit_scale)
+            y2 = int(y2 / fit_scale)
+
+            # Clamp to original image bounds
+            x1 = max(0, min(x1, orig_w))
+            y1 = max(0, min(y1, orig_h))
+            x2 = max(0, min(x2, orig_w))
+            y2 = max(0, min(y2, orig_h))
+
             detections.append({
                 "class_id": cls_id,
                 "class_name": names[cls_id] if cls_id < len(names) else f"class_{cls_id}",
                 "confidence": round(float(box.conf[0]), 3),
-                "bbox": [int(x1), int(y1), int(x2), int(y2)],
+                "bbox": [x1, y1, x2, y2],
             })
     return detections
 

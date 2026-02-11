@@ -154,12 +154,54 @@ def extract_text_from_crop(crop: Image.Image, field_class: str) -> str:
         return ""
 
 
+# ── Image standardization ──────────────────────────────────────────────────
+
+# Training reference: 200 DPI US Letter (8.5×11in) = 1700×2200px
+_REFERENCE_WIDTH = 1700
+_REFERENCE_HEIGHT = 2200
+
+
+def standardize_image(img: Image.Image) -> tuple[Image.Image, float]:
+    """Resize an image to the reference training dimensions.
+
+    Returns (standardized_image, scale_factor) so callers can map
+    bounding boxes back to original coordinates.
+    """
+    w, h = img.size
+    scale = min(_REFERENCE_WIDTH / w, _REFERENCE_HEIGHT / h)
+    new_w = int(w * scale)
+    new_h = int(h * scale)
+    resized = img.resize((new_w, new_h), Image.LANCZOS)
+
+    canvas = Image.new("RGB", (_REFERENCE_WIDTH, _REFERENCE_HEIGHT), (255, 255, 255))
+    canvas.paste(resized, (0, 0))
+    return canvas, scale
+
+
 # ── YOLO detection ─────────────────────────────────────────────────────────
 
 def run_detection(image_path: Path, conf: float = 0.25) -> list[dict]:
-    """Run YOLOv8 inference and return a list of detections."""
+    """Run YOLOv8 inference and return a list of detections.
+
+    The image is standardized to the reference training size before
+    inference.  Detected bounding boxes are mapped back to the original
+    image coordinate space.
+    """
+    orig_img = Image.open(image_path).convert("RGB")
+    orig_w, orig_h = orig_img.size
+
+    std_img, fit_scale = standardize_image(orig_img)
+
+    # Save standardized image to a temp file for ultralytics
+    import tempfile
+    tmp = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
+    std_img.save(tmp.name, quality=95)
+    tmp.close()
+
     model = YOLO(str(WEIGHTS))
-    results = model.predict(source=str(image_path), conf=conf, verbose=False)
+    results = model.predict(source=tmp.name, conf=conf, verbose=False)
+    Path(tmp.name).unlink(missing_ok=True)
+
     class_names = load_class_names()
 
     detections: list[dict] = []
@@ -168,11 +210,18 @@ def run_detection(image_path: Path, conf: float = 0.25) -> list[dict]:
             x1, y1, x2, y2 = box.xyxy[0].tolist()
             cls_id = int(box.cls[0])
             conf_val = float(box.conf[0])
+
+            # Map back to original image coordinates
+            x1 = max(0, min(int(x1 / fit_scale), orig_w))
+            y1 = max(0, min(int(y1 / fit_scale), orig_h))
+            x2 = max(0, min(int(x2 / fit_scale), orig_w))
+            y2 = max(0, min(int(y2 / fit_scale), orig_h))
+
             detections.append({
                 "class_id": cls_id,
                 "class_name": class_names[cls_id] if cls_id < len(class_names) else f"class_{cls_id}",
                 "confidence": conf_val,
-                "bbox": (int(x1), int(y1), int(x2), int(y2)),
+                "bbox": (x1, y1, x2, y2),
             })
     return detections
 
