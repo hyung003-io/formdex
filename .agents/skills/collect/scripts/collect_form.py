@@ -28,6 +28,13 @@ from shared.utils import PipelineError, clamp, load_config, pdf_rect_to_yolo
 
 RENDER_DPI = 200  # render resolution — higher = more detail but larger images
 
+# Checkbox bounding boxes in PDF forms are tiny (~10pt square → ~25px at 200 DPI).
+# YOLO needs at least ~48-64px to reliably detect objects.  We pad checkbox labels
+# so the detection target includes surrounding context (the label text, the box
+# border, etc.) which makes the feature more distinctive.
+CHECKBOX_PAD_FACTOR = 1.0  # expand each side by this multiple of the original size
+                           # 1.0 → 3× total size (25px → ~75px), well within YOLO range
+
 # Heuristic patterns to classify text fields more precisely
 _DATE_PATTERNS = re.compile(r"(date|dob|birth|filed|entered)", re.I)
 _DOLLAR_PATTERNS = re.compile(r"(amount|dollar|rent|cost|fee|price|damages|sum|payment|money|\$)", re.I)
@@ -292,11 +299,27 @@ def render_and_label(
             lines: list[str] = []
             for f in fields:
                 r = f["rect"]
+                x0, y0, x1, y1 = r.x0, r.y0, r.x1, r.y1
+
+                # Pad checkbox bounding boxes — they're too small for YOLO
+                # to detect at their native ~10pt size.  Expanding the bbox
+                # to include surrounding context (label text, borders) gives
+                # YOLO a much bigger and more distinctive detection target.
+                if f["class_name"] == "checkbox":
+                    w_pt = x1 - x0
+                    h_pt = y1 - y0
+                    pad_x = w_pt * CHECKBOX_PAD_FACTOR
+                    pad_y = h_pt * CHECKBOX_PAD_FACTOR
+                    x0 = max(0, x0 - pad_x)
+                    y0 = max(0, y0 - pad_y)
+                    x1 = min(page_rect.width, x1 + pad_x)
+                    y1 = min(page_rect.height, y1 + pad_y)
+
                 line = pdf_rect_to_yolo(
-                    field_x0=r.x0,
-                    field_y0=r.y0,
-                    field_x1=r.x1,
-                    field_y1=r.y1,
+                    field_x0=x0,
+                    field_y0=y0,
+                    field_x1=x1,
+                    field_y1=y1,
                     page_width=page_rect.width,
                     page_height=page_rect.height,
                     img_width=img_w,
