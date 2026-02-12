@@ -4,6 +4,7 @@ output/
 *.onnx
 runs/
 team_exports/
+api_jobs/
 *.zip
 *.mov
 *.mp4
