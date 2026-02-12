@@ -154,28 +154,10 @@ def extract_text_from_crop(crop: Image.Image, field_class: str) -> str:
         return ""
 
 
-# ── Image standardization ──────────────────────────────────────────────────
-
-# Training reference: 200 DPI US Letter (8.5×11in) = 1700×2200px
-_REFERENCE_WIDTH = 1700
-_REFERENCE_HEIGHT = 2200
-
-
-def standardize_image(img: Image.Image) -> tuple[Image.Image, float]:
-    """Resize an image to the reference training dimensions.
-
-    Returns (standardized_image, scale_factor) so callers can map
-    bounding boxes back to original coordinates.
-    """
-    w, h = img.size
-    scale = min(_REFERENCE_WIDTH / w, _REFERENCE_HEIGHT / h)
-    new_w = int(w * scale)
-    new_h = int(h * scale)
-    resized = img.resize((new_w, new_h), Image.LANCZOS)
-
-    canvas = Image.new("RGB", (_REFERENCE_WIDTH, _REFERENCE_HEIGHT), (255, 255, 255))
-    canvas.paste(resized, (0, 0))
-    return canvas, scale
+# ── Inference image size ──────────────────────────────────────────────────
+# Must match training imgsz.  YOLO handles letterbox resizing internally;
+# no pre-standardisation needed (avoids lossy double-resize).
+_INFERENCE_IMGSZ = 1280  # keep in sync with config.json → imgsz
 
 
 # ── YOLO detection ─────────────────────────────────────────────────────────
@@ -183,24 +165,21 @@ def standardize_image(img: Image.Image) -> tuple[Image.Image, float]:
 def run_detection(image_path: Path, conf: float = 0.25) -> list[dict]:
     """Run YOLOv8 inference and return a list of detections.
 
-    The image is standardized to the reference training size before
-    inference.  Detected bounding boxes are mapped back to the original
-    image coordinate space.
+    The image is passed directly to YOLO which handles letterbox resizing
+    internally (single resize, no quality loss).  Bounding boxes are
+    returned in the original image coordinate space.
     """
     orig_img = Image.open(image_path).convert("RGB")
     orig_w, orig_h = orig_img.size
-
-    std_img, fit_scale = standardize_image(orig_img)
-
-    # Save standardized image to a temp file for ultralytics
-    import tempfile
-    tmp = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
-    std_img.save(tmp.name, quality=95)
-    tmp.close()
+    img_np = np.array(orig_img)
 
     model = YOLO(str(WEIGHTS))
-    results = model.predict(source=tmp.name, conf=conf, verbose=False)
-    Path(tmp.name).unlink(missing_ok=True)
+    results = model.predict(
+        source=img_np,
+        conf=conf,
+        imgsz=_INFERENCE_IMGSZ,
+        verbose=False,
+    )
 
     class_names = load_class_names()
 
@@ -211,11 +190,11 @@ def run_detection(image_path: Path, conf: float = 0.25) -> list[dict]:
             cls_id = int(box.cls[0])
             conf_val = float(box.conf[0])
 
-            # Map back to original image coordinates
-            x1 = max(0, min(int(x1 / fit_scale), orig_w))
-            y1 = max(0, min(int(y1 / fit_scale), orig_h))
-            x2 = max(0, min(int(x2 / fit_scale), orig_w))
-            y2 = max(0, min(int(y2 / fit_scale), orig_h))
+            # Ultralytics maps boxes to original coords; just clamp.
+            x1 = max(0, min(int(x1), orig_w))
+            y1 = max(0, min(int(y1), orig_h))
+            x2 = max(0, min(int(x2), orig_w))
+            y2 = max(0, min(int(y2), orig_h))
 
             detections.append({
                 "class_id": cls_id,

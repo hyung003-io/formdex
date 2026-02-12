@@ -10,7 +10,7 @@
     "signature",
     "case_number"
   ],
-  "num_variations": 200,
+  "num_variations": 500,
   "target_accuracy": 0.75,
   "max_iterations": 10,
   "num_agents": 4,
@@ -21,5 +21,6 @@
   "model": "gpt-5-nano",
   "yolo_model": "yolov8l.pt",
   "epochs": 100,
+  "imgsz": 1280,
   "train_split": 0.8
 }

@@ -74,7 +74,7 @@ used in the train skill as the base model for transfer learning.
 |-------|---------|-------------|
 | epochs | 50 | training iterations over the full dataset |
 | train_split | 0.8 | 80% train / 20% validation |
-| imgsz | 640 | image size for training (set in train skill) |
+| imgsz | 1280 | image size for training and inference (set in config.json) |
 
 ### when to use larger models
 

@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import io
 import shutil
-import tempfile
 import time
 import uuid
 from pathlib import Path
@@ -88,33 +87,14 @@ def _load_fonts() -> tuple:
 
 FONT, FONT_SM, FONT_CHECK = _load_fonts()
 
-# ── Image standardization ──────────────────────────────────────────────────
-
-# Training images are rendered at 200 DPI for US Letter (8.5×11in) = 1700×2200px.
-# Scans & faxes arrive at wildly different sizes.  We normalise to this
-# reference so YOLO sees the same scale it was trained on.
-_REFERENCE_WIDTH = 1700
-_REFERENCE_HEIGHT = 2200
-
-
-def standardize_image(img: Image.Image) -> Image.Image:
-    """Resize an image to the reference training dimensions.
-
-    Maintains aspect ratio and pads with white to exactly
-    _REFERENCE_WIDTH × _REFERENCE_HEIGHT so the model receives
-    consistent input regardless of scan/fax DPI.
-    """
-    w, h = img.size
-    # Scale so the image fits inside the reference box
-    scale = min(_REFERENCE_WIDTH / w, _REFERENCE_HEIGHT / h)
-    new_w = int(w * scale)
-    new_h = int(h * scale)
-    resized = img.resize((new_w, new_h), Image.LANCZOS)
-
-    # Paste onto a white canvas at top-left (forms are top-aligned)
-    canvas = Image.new("RGB", (_REFERENCE_WIDTH, _REFERENCE_HEIGHT), (255, 255, 255))
-    canvas.paste(resized, (0, 0))
-    return canvas
+# ── Inference image size ──────────────────────────────────────────────────
+# Must match the imgsz used during training so YOLO sees features at the
+# same scale.  Previously we pre-standardised to 1700×2200 and then YOLO
+# downsized *again* to 640 — a lossy double-resize that hurt small objects
+# (checkboxes, signatures).  Now we let YOLO handle the single resize via
+# its built-in letterboxing, which preserves aspect ratio and avoids
+# interpolation artefacts from a redundant intermediate resize.
+_INFERENCE_IMGSZ = 1280  # should stay in sync with config.json → imgsz
 
 
 # ── Core logic ─────────────────────────────────────────────────────────────
@@ -153,28 +133,23 @@ def extract_text_from_crop(crop: Image.Image, field_class: str) -> str:
 def detect_on_image(img: Image.Image, conf: float) -> list[dict]:
     """Run YOLO on a PIL image and return raw detections.
 
-    The image is standardized to reference training dimensions before
-    inference so scans/faxes at any DPI produce consistent results.
-    Bounding boxes are mapped back to the original image coordinates.
+    The image is passed directly to YOLO which handles letterbox resizing
+    internally (single resize, no quality loss).  YOLO returns bounding
+    boxes already mapped back to the original image coordinates.
     """
     orig_w, orig_h = img.size
 
-    # Standardize to training dimensions
-    std_img = standardize_image(img)
-    std_w, std_h = std_img.size
-
-    # Compute the scale factor used during standardization (for mapping back)
-    fit_scale = min(_REFERENCE_WIDTH / orig_w, _REFERENCE_HEIGHT / orig_h)
-
-    # Save to a temp file for ultralytics
-    tmp = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
-    std_img.save(tmp.name, quality=95)
-    tmp.close()
+    # Convert PIL → numpy for ultralytics (avoids temp-file I/O)
+    img_np = np.array(img)
 
     yolo = get_model()
     names = get_class_names()
-    results = yolo.predict(source=tmp.name, conf=conf, verbose=False)
-    Path(tmp.name).unlink(missing_ok=True)
+    results = yolo.predict(
+        source=img_np,
+        conf=conf,
+        imgsz=_INFERENCE_IMGSZ,
+        verbose=False,
+    )
 
     detections: list[dict] = []
     for r in results:
@@ -182,17 +157,12 @@ def detect_on_image(img: Image.Image, conf: float) -> list[dict]:
             x1, y1, x2, y2 = box.xyxy[0].tolist()
             cls_id = int(box.cls[0])
 
-            # Map coordinates back to original image space
-            x1 = int(x1 / fit_scale)
-            y1 = int(y1 / fit_scale)
-            x2 = int(x2 / fit_scale)
-            y2 = int(y2 / fit_scale)
-
-            # Clamp to original image bounds
-            x1 = max(0, min(x1, orig_w))
-            y1 = max(0, min(y1, orig_h))
-            x2 = max(0, min(x2, orig_w))
-            y2 = max(0, min(y2, orig_h))
+            # Ultralytics already maps boxes to original image coords;
+            # just clamp to bounds.
+            x1 = max(0, min(int(x1), orig_w))
+            y1 = max(0, min(int(y1), orig_h))
+            x2 = max(0, min(int(x2), orig_w))
+            y2 = max(0, min(int(y2), orig_h))
 
             detections.append({
                 "class_id": cls_id,
