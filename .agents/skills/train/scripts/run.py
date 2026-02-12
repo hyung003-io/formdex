@@ -87,6 +87,7 @@ def train_model(
     yolo_model: str,
     epochs: int,
     imgsz: int,
+    batch: int,
     weights_dir: Path,
 ) -> Path:
     """Train YOLO model using ultralytics."""
@@ -103,13 +104,14 @@ def train_model(
     else:
         device = "cpu"
     print(f"[train] Using device: {device}")
-    print(f"[train] imgsz: {imgsz}")
+    print(f"[train] imgsz: {imgsz}, batch: {batch}")
 
     model = YOLO(yolo_model)
     results = model.train(
         data=str(dataset_yaml),
         epochs=epochs,
         imgsz=imgsz,
+        batch=batch,
         device=device,
         project=str(weights_dir.parent),
         name="yolo_run",
@@ -139,6 +141,7 @@ def main() -> int:
     yolo_model = config.get("yolo_model", "yolov8n.pt")
     epochs = config.get("epochs", 50)
     imgsz = config.get("imgsz", 640)
+    batch = config.get("batch", 4)
 
     # Load class names
     classes_path = output_dir / "classes.txt"
@@ -159,7 +162,7 @@ def main() -> int:
 
     dataset_yaml = generate_dataset_yaml(dataset_dir, classes, output_dir / "dataset.yaml")
 
-    train_model(dataset_yaml, yolo_model, epochs, imgsz, weights_dir)
+    train_model(dataset_yaml, yolo_model, epochs, imgsz, batch, weights_dir)
 
     print("[train] Training complete.")
     return 0

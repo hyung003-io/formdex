@@ -22,5 +22,6 @@
   "yolo_model": "yolov8l.pt",
   "epochs": 100,
   "imgsz": 1280,
+  "batch": 4,
   "train_split": 0.8
 }
